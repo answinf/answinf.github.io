@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #fff;
+    color: #222;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+.task p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    color: #2c3e50;
+    padding: 0;
+}
+
+.code-block + p {
+    margin-top: 20px;
+    color: #2c3e50;
+    font-size: 16px;
+}
+
+.task p strong {
+    color: #0066ff;
+    font-weight: 600;
+}
+
+.task p code:not([class*="language-"]) {
+    background: #f1f3f4;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    font-size: 14px;
+    color: #d63384;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.lesson-card {
+    display: block;
+    padding: 20px;
+    background: #f5f5f7;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #222;
+    text-align: center;
+    font-weight: 500;
+    font-size: 17px;
+    transition: all 0.2s;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeUp 0.3s ease forwards;
+}
+
+.lesson-card:hover {
+    background: #0066ff;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15);
+}
+
+.lesson-card:nth-child(1) { animation-delay: 0.1s; }
+.lesson-card:nth-child(2) { animation-delay: 0.15s; }
+.lesson-card:nth-child(3) { animation-delay: 0.2s; }
+.lesson-card:nth-child(4) { animation-delay: 0.25s; }
+
+.header {
+    margin-bottom: 40px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #666;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    color: #0066ff;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin-bottom: 0;
+}
+
+.tasks {
+    margin: 30px 0;
+}
+
+.task {
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeUp 0.4s ease forwards;
+}
+
+.task:nth-child(1) { animation-delay: 0.2s; }
+.task:nth-child(2) { animation-delay: 0.3s; }
+.task:nth-child(3) { animation-delay: 0.4s; }
+
+.task-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.code-block {
+    background: #f6f8fa;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e1e4e8;
+    position: relative;
+}
+
+.code-block:hover {
+    border-color: #d1d5da;
+}
+
+pre {
+    margin: 0;
+    padding: 24px;
+    overflow-x: auto;
+    background: #f6f8fa;
+}
+
+code {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 14px;
+    line-height: 1.45;
+    color: #24292e;
+    display: block;
+    white-space: pre;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #0066ff;
+    color: white;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    z-index: 10;
+    box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04);
+}
+
+.copy-btn:hover {
+    background: #0052d4;
+}
+
+.copy-btn.copied {
+    background: #00a854;
+}
+
+.tag { 
+    color: #22863a; 
+    font-weight: 600; 
+}
+.attr { 
+    color: #6f42c1; 
+}
+.val { 
+    color: #005cc5; 
+}
+.text { 
+    color: #24292e; 
+}
+.comment { 
+    color: #6a737d; 
+    font-style: italic; 
+}
+.doctype { 
+    color: #6a737d; 
+}
+
+.lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.nav-btn {
+    padding: 12px 24px;
+    background: #f5f5f7;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    background: #e5e5e7;
+}
+
+.nav-btn.primary {
+    background: #0066ff;
+    color: white;
+}
+
+.nav-btn.primary:hover {
+    background: #0052d4;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 16px;
+    }
+    
+    .lessons-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .lesson-card {
+        padding: 18px 12px;
+        font-size: 16px;
+    }
+    
+    pre {
+        padding: 20px 16px;
+        font-size: 13px;
+    }
+    
+    .copy-btn {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        padding: 12px;
+    }
+    
+    .lesson-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-btn {
+        text-align: center;
+    }
+}
